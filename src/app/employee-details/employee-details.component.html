@@ -1,0 +1,11 @@
+<div *ngIf="employee">
+  <h1>{{employee.employee_name}}</h1>
+  <p>
+    -- employee_salary: {{employee.employee_salary}}<br/>
+    -- employee_age: {{employee.employee_age}}<br/>
+    -- profile_image: {{employee.profile_image}}
+  </p>
+  <p>
+    <a href="employee-edit/{{employee.id}}">Update</a> | <a href="employee-delete/{{employee.id}}">Delete</a>
+  </p>
+</div>

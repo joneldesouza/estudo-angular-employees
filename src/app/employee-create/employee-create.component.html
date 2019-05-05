@@ -1,0 +1,9 @@
+<h1>Create Employee</h1>
+
+<form (ngSubmit)="cadastro()" [formGroup]="formCadastro">
+  <input type="text" placeholder="Name" formControlName="name" />
+  <input type="text" placeholder="Salary" formControlName="salary" />
+  <input type="text" placeholder="Age" formControlName="age" />
+  <button type="submit">Cadastrar</button>
+</form>
+<div *ngIf="mensagem">{{mensagem}}</div>

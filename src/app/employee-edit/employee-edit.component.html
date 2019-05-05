@@ -1,0 +1,10 @@
+<div *ngIf="employee">
+  <h1>Edit {{employee.employee_name}}</h1>
+  <form (ngSubmit)="edit()" [formGroup]="formEdit">
+    <input type="text" value="{{employee.employee_name}}" placeholder="Name" formControlName="name" />
+    <input type="text" value="{{employee.employee_salary}}" placeholder="Salary" formControlName="salary" />
+    <input type="text" value="{{employee.employee_age}}" placeholder="Age" formControlName="age" />
+    <button type="submit">Edit</button>
+  </form>
+  <div *ngIf="mensagem">{{mensagem}}</div>
+</div>
