@@ -12,7 +12,8 @@ export class EmployeeCreateComponent implements OnInit {
   formCadastro;
   valoresForm: Object;
   conversao;
-  mensagem;
+  responseClass;
+  responseText;
 
   constructor(private httpClient: HttpClient, private fb: FormBuilder) { }
 
@@ -35,11 +36,13 @@ export class EmployeeCreateComponent implements OnInit {
     this.httpClient.post("http://dummy.restapiexample.com/api/v1/create", this.conversao).subscribe(
       data => { 
         console.log("POST Request is successful ", data);
-        this.mensagem = "Cadastro efetuado com sucesso.";
+        this.responseClass = "alert-success";
+        this.responseText = "Cadastro efetuado com sucesso.";
       },
       error => { 
         console.log("Error", error);
-        this.mensagem = "Ocorreu algum erro. Tente novamente.";
+        this.responseClass = "alert-danger";
+        this.responseText = "Ocorreu algum erro. Tente novamente.";
       }
     );
   }

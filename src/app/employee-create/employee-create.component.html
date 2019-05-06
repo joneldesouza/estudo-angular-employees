@@ -1,9 +1,20 @@
 <h1>Create Employee</h1>
 
 <form (ngSubmit)="cadastro()" [formGroup]="formCadastro">
-  <input type="text" placeholder="Name" formControlName="name" />
-  <input type="text" placeholder="Salary" formControlName="salary" />
-  <input type="text" placeholder="Age" formControlName="age" />
-  <button type="submit">Cadastrar</button>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter Name" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="salary">Salary</label>
+    <input type="text" class="form-control" id="salary" placeholder="Enter Salary" formControlName="salary">
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="text" class="form-control" id="age" placeholder="Enter Age" formControlName="age">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<div *ngIf="mensagem">{{mensagem}}</div>
+<div *ngIf="responseText || responseClass" class="alert {{responseClass}}">{{responseText}}</div>
+
+<div *ngIf="mensagem" class="alert {{mensagem.class}}">{{mensagem.text}}</div>
