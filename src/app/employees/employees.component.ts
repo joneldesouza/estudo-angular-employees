@@ -5,7 +5,6 @@ import * as _ from 'underscore';
 import { PagerService } from '../_services';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
