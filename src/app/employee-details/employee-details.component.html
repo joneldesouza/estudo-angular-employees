@@ -6,6 +6,6 @@
     -- profile_image: {{employee.profile_image}}
   </p>
   <p>
-    <a href="employee-edit/{{employee.id}}">Update</a> | <a href="employee-delete/{{employee.id}}">Delete</a>
+    <a (click)="goToEmployeeEdit(employee.id)">Update</a> | <a (click)="goToEmployeeDelete(employee.id)">Delete</a>
   </p>
 </div>

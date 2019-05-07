@@ -43,7 +43,7 @@ export class EmployeeEditComponent implements OnInit {
 
   edit(){
     console.log(this.valoresForm);
-    /*this.conversao = JSON.stringify(this.valoresForm);
+    this.conversao = JSON.stringify(this.valoresForm);
     console.log(this.conversao);
     this.httpClient.put("http://dummy.restapiexample.com/api/v1/update/"+this.id, this.conversao).subscribe(
       data => { 
@@ -54,7 +54,7 @@ export class EmployeeEditComponent implements OnInit {
         console.log("Error", error);
         this.mensagem = "Ocorreu algum erro. Tente novamente.";
       }
-    );*/
+    );
   }
 
 }

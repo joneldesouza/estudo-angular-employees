@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmployeeDetailsComponent implements OnInit {
 
-  constructor(private router: ActivatedRoute, private httpClient: HttpClient) { }
+  constructor(private router: ActivatedRoute, private route: Router, private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.getEmployee();
@@ -23,6 +23,14 @@ export class EmployeeDetailsComponent implements OnInit {
       console.log(res);
       this.employee = res;
     });
+  }
+
+  goToEmployeeEdit(id) {
+    this.route.navigate(['employee-edit', id]);
+  }
+
+  goToEmployeeDelete(id) {
+    this.route.navigate(['employee-delete', id]);
   }
 
 }

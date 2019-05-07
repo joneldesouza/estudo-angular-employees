@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import * as _ from 'underscore';
 import { PagerService } from '../_services';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { PagerService } from '../_services';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient, private pagerService: PagerService) { }
+  constructor(private httpClient: HttpClient, private pagerService: PagerService, private router: Router) { }
 
   // array of all items to be paged
   private employees: any[];
@@ -25,6 +26,10 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit() {
     this.getEmployees();
+  }
+
+  goToEmployeeDetails(id) {
+    this.router.navigate(['employee-details', id]);
   }
 
   getEmployees(){
@@ -46,5 +51,7 @@ export class EmployeesComponent implements OnInit {
     // get current page of items
     this.pagedItems = this.employees.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
+
+
 
 }

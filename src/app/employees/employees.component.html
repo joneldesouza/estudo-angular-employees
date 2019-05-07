@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let employee of pagedItems" >
-    <a href="employees/{{employee.id}}">
+    <a (click)="goToEmployeeDetails(employee.id)">
       -- id: {{employee.id}}
       -- employee_name: {{employee.employee_name}}
       -- employee_salary: {{employee.employee_salary}}
